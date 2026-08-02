@@ -50,6 +50,12 @@ Short guides that show you what to type, what to check, and how to stay in contr
 
     [See VALE and download →](vale/index.md)
 
+-   **Sell websites with TUSK**
+
+    A free, local-first CRM that finds businesses with weak websites, scores who to call first, and tracks every deal from dial to invoice.
+
+    [See TUSK and download →](tusk/index.md)
+
 </div>
 
 ## The five habits that make AI useful
