@@ -58,8 +58,11 @@ That's the whole setup. The AI will ask where you keep your notes, save the play
 
 </div>
 
-!!! info "The library grows"
-    More playbooks are on the way, and every one of them lands here free, no signup. Each playbook page shows a finished example first, so you can see the payoff before you download anything.
+<div class="signup-panel">
+  <span class="kicker">New playbooks, sent to you</span>
+  <p>The library grows, and every playbook lands here free, no signup. Leave an email and new ones hit your inbox the day they ship, along with occasional practical tips and tools worth knowing about. Nothing sold, nothing shared, unsubscribe any time.</p>
+  <script async data-uid="4171b61515" src="https://jordysupport.kit.com/4171b61515/index.js"></script>
+</div>
 
 ## Why the interview beats a form
 

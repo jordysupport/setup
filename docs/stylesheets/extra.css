@@ -190,6 +190,24 @@
 
 .small-note { font-size: 0.86rem; color: var(--js-muted); }
 
+/* --- Newsletter signup panel (playbooks index) ------------- */
+.signup-panel {
+  margin: 1.8rem 0;
+  padding: 1.1rem 1.3rem 1.2rem;
+  border: 1px solid var(--js-border);
+  border-left: 4px solid var(--js-green);
+  border-radius: 0 4px 4px 0;
+  background: var(--js-panel);
+}
+.signup-panel .kicker { display: block; margin-bottom: 0.35rem; }
+.signup-panel p {
+  max-width: 46rem;
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.signup-panel .formkit-form { margin-top: 0.4rem; }
+
 /* --- Support outro (auto-appended on guide pages) ---------- */
 .support-outro {
   margin: 2.2rem 0 0.4rem;
