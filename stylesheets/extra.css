@@ -271,6 +271,33 @@
   margin-top: 0.5rem !important;
   opacity: 0.55;
 }
+/* Literal per-palette values as a second layer: some engines mistreat
+   var() inside !important declarations when competing with the embed's
+   inline styles. Keep these in sync with the palette variables above. */
+[data-md-color-scheme="default"] .signup-panel form.formkit-form[data-uid] .formkit-input {
+  background: #fbfaf6 !important;
+  border-color: #d9d7cc !important;
+  color: #23281f !important;
+}
+[data-md-color-scheme="default"] .signup-panel form.formkit-form[data-uid] .formkit-submit {
+  background-color: #22503b !important;
+  border-color: #22503b !important;
+  color: #ffffff !important;
+}
+[data-md-color-scheme="default"] .signup-panel form.formkit-form[data-uid] .formkit-submit:hover {
+  background-color: #2e6b4f !important;
+  border-color: #2e6b4f !important;
+}
+[data-md-color-scheme="slate"] .signup-panel form.formkit-form[data-uid] .formkit-input {
+  background: #1e2129 !important;
+  border-color: #3a4038 !important;
+  color: #e8eae4 !important;
+}
+[data-md-color-scheme="slate"] .signup-panel form.formkit-form[data-uid] .formkit-submit {
+  background-color: #86c2a4 !important;
+  border-color: #86c2a4 !important;
+  color: #10160f !important;
+}
 
 /* --- Support outro (auto-appended on guide pages) ---------- */
 .support-outro {
