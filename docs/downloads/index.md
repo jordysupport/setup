@@ -1,4 +1,5 @@
 ---
+hide_support_outro: true
 description: >-
   Free downloads: VALE, a music-reactive voice assistant for Windows, and TUSK, a local-first CRM for selling websites to local businesses. Plus installable AI playbooks.
 ---

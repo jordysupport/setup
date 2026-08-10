@@ -190,6 +190,23 @@
 
 .small-note { font-size: 0.86rem; color: var(--js-muted); }
 
+/* --- Support outro (auto-appended on guide pages) ---------- */
+.support-outro {
+  margin: 2.2rem 0 0.4rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--js-border);
+  border-left: 4px solid var(--js-green);
+  border-radius: 0 4px 4px 0;
+  background: var(--js-panel);
+}
+.support-outro .kicker { display: block; margin-bottom: 0.25rem; }
+.support-outro p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--js-muted);
+}
+
 /* --- Tables, code, admonitions: quiet ---------------------- */
 .md-typeset table:not([class]) {
   border: 1px solid var(--js-border);

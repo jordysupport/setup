@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 
+{% block content %}
+  {{ super() }}
+  {% if not page.is_homepage and not page.meta.hide_support_outro %}
+  <aside class="support-outro">
+    <span class="kicker">Free help, kept free</span>
+    <p>Everything on this site is free to read and use, with no required signup. If this page saved you time or a headache, <a href="https://ko-fi.com/support_jordy" rel="noopener">a small Ko-fi tip</a> helps keep it that way. Either way, take the help.</p>
+  </aside>
+  {% endif %}
+{% endblock %}
+
 {% block extrahead %}
   {{ super() }}
   {% if page and page.is_homepage %}

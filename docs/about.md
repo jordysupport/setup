@@ -1,4 +1,5 @@
 ---
+hide_support_outro: true
 description: >-
   Who makes Jordy Support and why every guide is free. Plain-English AI help for creators, small business owners, and beginners doing real work.
 ---
