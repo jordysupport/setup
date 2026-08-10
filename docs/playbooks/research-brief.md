@@ -1,6 +1,11 @@
 ---
 description: >-
   Get AI research with real sources you can click: a free playbook that interviews you, researches your question, and delivers a short, honest brief.
+software_schema:
+  name: Research Brief Playbook
+  operating_system: Windows, macOS, Linux
+  category: UtilitiesApplication
+  download_url: https://jordysupport.com/downloads/research-brief-skill.zip
 ---
 
 <div class="playbook-hero" markdown>

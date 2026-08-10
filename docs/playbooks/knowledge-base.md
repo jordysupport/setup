@@ -1,6 +1,11 @@
 ---
 description: >-
   Build a personal knowledge base with AI: turn articles and decisions into short, sourced notes in your vault that future-you can actually use.
+software_schema:
+  name: Knowledge Base Playbook
+  operating_system: Windows, macOS, Linux
+  category: UtilitiesApplication
+  download_url: https://jordysupport.com/downloads/knowledge-base-skill.zip
 ---
 
 <div class="playbook-hero" markdown>

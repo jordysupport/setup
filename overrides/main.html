@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  {% if page and page.is_homepage %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://jordysupport.com/#organization",
+        "name": "Jordy Support",
+        "url": "https://jordysupport.com/",
+        "sameAs": [
+          "https://github.com/jordysupport",
+          "https://ko-fi.com/support_jordy"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://jordysupport.com/#website",
+        "name": "Jordy Support",
+        "url": "https://jordysupport.com/",
+        "description": {{ config.site_description | tojson }},
+        "publisher": { "@id": "https://jordysupport.com/#organization" }
+      }
+    ]
+  }
+  </script>
+  {% endif %}
+  {% if page and page.meta.software_schema %}
+  {% set app = page.meta.software_schema %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": {{ app.name | tojson }},
+    "description": {{ (app.description or page.meta.description) | tojson }},
+    "url": {{ page.canonical_url | tojson }},
+    "operatingSystem": {{ app.operating_system | tojson }},
+    "applicationCategory": {{ app.category | tojson }},
+    {% if app.download_url %}"downloadUrl": {{ app.download_url | tojson }},{% endif %}
+    {% if app.version %}"softwareVersion": {{ app.version | tojson }},{% endif %}
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": { "@id": "https://jordysupport.com/#organization" }
+  }
+  </script>
+  {% endif %}
+  {% if config.extra.cf_analytics_token %}
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ config.extra.cf_analytics_token }}"}'></script>
+  {% endif %}
+{% endblock %}

@@ -18,7 +18,7 @@ I spent a lot of time in AI communities helping people get set up. The same prob
 - **Plain words.** Every term translated the moment it appears.
 - **Safety by default.** Every prompt on this site has "plan first, ask before acting" built in.
 - **Honest limits.** What AI is bad at gets said out loud.
-- **Free.** No paywall, no signup, no upsell.
+- **Free.** No paywall, no required signup.
 
 ## Credit where due
 

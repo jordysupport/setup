@@ -1,6 +1,12 @@
 ---
 description: >-
   Download TUSK: a free, local-first CRM for selling websites to local businesses. Scrape real leads, grade their sites, call with real talking points, and invoice the wins.
+software_schema:
+  name: TUSK
+  operating_system: Windows, macOS, Linux
+  category: BusinessApplication
+  version: 0.3.0
+  download_url: https://github.com/jordysupport/tusk/archive/refs/heads/main.zip
 ---
 
 <div class="tusk-hero" markdown>
@@ -24,7 +30,7 @@ TUSK is for one specific hustle: selling websites to local businesses. It finds 
 <p class="vale-preview-note">Real screenshots of the current build, running on the included demo data.</p>
 
 <div class="vale-facts">
-  <div><strong>Current release</strong><span>0.2.0</span></div>
+  <div><strong>Current release</strong><span>0.3.0</span></div>
   <div><strong>Runs on</strong><span>Windows, Mac, Linux (Node 18+)</span></div>
   <div><strong>Price</strong><span>Free, MIT licensed</span></div>
   <div><strong>Your data</strong><span>One SQLite file on your machine</span></div>
@@ -72,6 +78,10 @@ npm run dev
 Then open `http://localhost:5173`. On Windows, double-clicking `tusk-start.cmd` does all of it, including reopening the app if it's already running. The seed step loads eight invented demo businesses so you can learn the app before real work; delete them from the Leads page whenever you're ready.
 
 TUSK works with **zero configuration**: lead scraping returns clearly-labelled fake results and emails are logged instead of sent, so nothing real happens until you add keys. When you're ready, `.env.example` walks you through the two optional integrations: a Google Places key for real lead scraping, and SMTP for real email.
+
+## Prefer it hosted?
+
+TUSK is also available as a hosted service at [tuskcrm.com](https://tuskcrm.com). The free trial includes 1,000 leads and 5 searches, and the Solo plan is $9.99 a month with website audits included. Self-hosting from this page stays free forever.
 
 ## The screens
 

@@ -1,6 +1,11 @@
 ---
 description: >-
   Turn one article, video, or post into drafts for newsletter, social, and video with AI — without invented facts. A free plain-English playbook.
+software_schema:
+  name: Content Repurpose Playbook
+  operating_system: Windows, macOS, Linux
+  category: UtilitiesApplication
+  download_url: https://jordysupport.com/downloads/content-repurpose-skill.zip
 ---
 
 <div class="playbook-hero" markdown>

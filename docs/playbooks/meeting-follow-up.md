@@ -1,6 +1,11 @@
 ---
 description: >-
   Turn messy meeting notes into decisions, to-dos with owners, and a ready-to-review follow-up message with AI. A free plain-English playbook.
+software_schema:
+  name: Meeting Follow-Up Playbook
+  operating_system: Windows, macOS, Linux
+  category: UtilitiesApplication
+  download_url: https://jordysupport.com/downloads/meeting-follow-up-skill.zip
 ---
 
 <div class="playbook-hero" markdown>

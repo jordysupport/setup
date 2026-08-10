@@ -1,6 +1,12 @@
 ---
 description: >-
   Download VALE for Windows: a free voice assistant with four visual worlds, local speech, and music-reactive fields. One prompt installs it via your AI.
+software_schema:
+  name: VALE
+  operating_system: Windows 10, Windows 11
+  category: MultimediaApplication
+  version: 0.2.1-preview
+  download_url: https://github.com/jordysupport/jordysupport.github.io/releases/latest/download/VALE-Windows-x64.zip
 ---
 
 <div class="vale-hero" markdown>
