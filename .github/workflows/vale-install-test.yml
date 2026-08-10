@@ -1,0 +1,164 @@
+# VALE Windows install test
+#
+# Proves every published VALE release installs cleanly on a real Windows
+# machine, exactly the way a user would do it: download the release ZIP,
+# verify its SHA-256, extract, run the non-interactive installer, then run
+# the shipped diagnostic and require zero failures.
+#
+# Runs automatically when a release is published, and on demand from the
+# Actions tab (optionally against any existing tag).
+#
+# What this does NOT cover: microphone capture, spoken replies, and the
+# visualizer on screen (no audio devices or interactive session on CI), and
+# the real agent-authentication path (CI must never hold agent credentials —
+# a stub agent exercises the config path instead, the same pattern
+# Test-PublicRelease.ps1 uses).
+
+name: VALE install test
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to test (leave blank for the latest release)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vale-install-test-${{ github.event.release.tag_name || inputs.tag || 'latest' }}
+  cancel-in-progress: false
+
+jobs:
+  install-test:
+    runs-on: windows-latest
+    timeout-minutes: 90
+    defaults:
+      run:
+        # Users install through the .cmd wrappers, which invoke Windows
+        # PowerShell 5.1 — match that runtime, not pwsh.
+        shell: powershell
+    env:
+      ASSET_NAME: VALE-Windows-x64.zip
+      DOWNLOAD_DIR: ${{ github.workspace }}\vale-download
+      EXTRACT_DIR: ${{ github.workspace }}\vale-extract
+    steps:
+      - name: Resolve release tag
+        id: tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          TAG_INPUT: ${{ inputs.tag }}
+        run: |
+          $tag = $env:TAG_INPUT
+          if ($env:EVENT_NAME -eq "release") { $tag = $env:RELEASE_TAG }
+          if (-not $tag) {
+            $tag = gh release view --repo $env:GITHUB_REPOSITORY --json tagName --jq .tagName
+            if ($LASTEXITCODE -ne 0 -or -not $tag) { throw "No release tag could be resolved." }
+          }
+          Write-Host "Testing release: $tag"
+          "tag=$tag" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+
+      - name: Download release assets (as a user would)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.tag.outputs.tag }}
+        run: |
+          New-Item -ItemType Directory -Path $env:DOWNLOAD_DIR -Force | Out-Null
+          gh release download $env:TAG --repo $env:GITHUB_REPOSITORY `
+            --pattern $env:ASSET_NAME --pattern "$($env:ASSET_NAME).sha256" `
+            --dir $env:DOWNLOAD_DIR
+          if ($LASTEXITCODE -ne 0) { throw "Asset download failed for $env:TAG. Are both $env:ASSET_NAME and its .sha256 attached to the release?" }
+          Get-ChildItem $env:DOWNLOAD_DIR | Format-Table Name, Length
+
+      - name: Verify ZIP SHA-256 against the published checksum
+        run: |
+          $zip = Join-Path $env:DOWNLOAD_DIR $env:ASSET_NAME
+          $checksumFile = "$zip.sha256"
+          $expected = ((Get-Content -LiteralPath $checksumFile -Raw).Trim() -split '\s+')[0].ToLowerInvariant()
+          if ($expected -notmatch '^[0-9a-f]{64}$') { throw "The .sha256 file does not start with a 64-character hash." }
+          $actual = (Get-FileHash -LiteralPath $zip -Algorithm SHA256).Hash.ToLowerInvariant()
+          if ($actual -ne $expected) { throw "Checksum mismatch. Expected $expected, got $actual." }
+          Write-Host "ZIP integrity verified: $actual"
+
+      - name: Extract and locate the bundle
+        id: bundle
+        run: |
+          Expand-Archive -LiteralPath (Join-Path $env:DOWNLOAD_DIR $env:ASSET_NAME) -DestinationPath $env:EXTRACT_DIR -Force
+          $sourceRoot = Join-Path $env:EXTRACT_DIR "VALE-Windows-x64"
+          if (-not (Test-Path -LiteralPath (Join-Path $sourceRoot "VERSION"))) { throw "Extracted bundle is missing VERSION at $sourceRoot." }
+          $version = (Get-Content -LiteralPath (Join-Path $sourceRoot "VERSION") -Raw).Trim()
+          Write-Host "Bundle version: $version"
+          "source_root=$sourceRoot" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+          "version=$version" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+          Get-CimInstance Win32_LogicalDisk -Filter "DeviceID='C:'" |
+            ForEach-Object { Write-Host ("Free space on C: {0:N1} GB" -f ($_.FreeSpace / 1GB)) }
+
+      - name: Run the full non-interactive install (manual-endpoint user path)
+        env:
+          SOURCE_ROOT: ${{ steps.bundle.outputs.source_root }}
+        run: |
+          # Same invocation shape the agent wrapper uses; default BaseUrl/Model
+          # are the documented local-Ollama fallback and are validated for
+          # shape only — no endpoint is contacted during install.
+          & (Join-Path $env:SOURCE_ROOT "scripts\Install-VALE.ps1") `
+            -SourceRoot $env:SOURCE_ROOT -NonInteractive -Quiet -SkipLaunch
+          if ($LASTEXITCODE -ne 0) { throw "Install-VALE.ps1 reported failure (exit $LASTEXITCODE)." }
+          $install = Join-Path $env:LOCALAPPDATA "Programs\VALE"
+          if (-not (Test-Path -LiteralPath (Join-Path $install "VERSION"))) { throw "No installed copy at $install." }
+          if (-not (Test-Path -LiteralPath (Join-Path $install "app\voice-line\.env.local"))) { throw "Install did not write the local configuration." }
+          Write-Host "Base install completed at $install"
+
+      - name: Agent-managed configure pass (stub agent, no credentials)
+        env:
+          SOURCE_ROOT: ${{ steps.bundle.outputs.source_root }}
+        run: |
+          # CI must never hold real agent credentials. A stub that answers
+          # "login status" with exit 0 exercises Install-VALEForAgent.ps1's
+          # configuration path — the same technique Test-PublicRelease.ps1
+          # uses with its bundled fake agent (stripped from release ZIPs).
+          $stub = Join-Path $env:RUNNER_TEMP "stub-agent.cmd"
+          Set-Content -Path $stub -Value "@echo ok`r`n@exit /b 0" -Encoding ascii
+          & (Join-Path $env:SOURCE_ROOT "scripts\Install-VALEForAgent.ps1") `
+            -SourceRoot $env:SOURCE_ROOT -AgentRuntime Codex -AgentCommand $stub `
+            -SkipDependencies -SkipAgentProbe -SkipShortcuts -SkipLaunch
+          if ($LASTEXITCODE -ne 0) { throw "Install-VALEForAgent.ps1 reported failure (exit $LASTEXITCODE)." }
+          $install = Join-Path $env:LOCALAPPDATA "Programs\VALE"
+          $settings = Get-Content -LiteralPath (Join-Path $install "app\voice-line\.env.local") -Raw
+          if ($settings -notmatch 'VALE_AGENT_RUNTIME=codex') { throw "Agent runtime was not written to the configuration." }
+          if ($settings -notmatch 'VALE_BASE_URL=http://127\.0\.0\.1:11435/v1') { throw "Agent bridge URL was not written to the configuration." }
+          Write-Host "Agent-managed configuration verified."
+
+      - name: Run the shipped installation diagnostic
+        run: |
+          $install = Join-Path $env:LOCALAPPDATA "Programs\VALE"
+          & (Join-Path $install "scripts\Test-VALEInstallation.ps1") -InstallRoot $install
+          if ($LASTEXITCODE -ne 0) { throw "Test-VALEInstallation.ps1 reported required failures." }
+
+      - name: Write summary
+        if: always()
+        env:
+          TAG: ${{ steps.tag.outputs.tag }}
+          VERSION: ${{ steps.bundle.outputs.version }}
+        run: |
+          @(
+            "## VALE install test"
+            ""
+            "- Release tag: **$env:TAG**"
+            "- Bundle VERSION: **$env:VERSION**"
+            "- Runner: windows-latest (Windows Server; microphone checks warn rather than fail)"
+          ) | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append -Encoding utf8
+
+      - name: Upload install and diagnostic logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vale-install-logs-${{ steps.tag.outputs.tag }}
+          path: ${{ env.LOCALAPPDATA }}\VALE\logs
+          if-no-files-found: warn
+          retention-days: 30
