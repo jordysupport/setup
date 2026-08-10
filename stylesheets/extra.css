@@ -190,6 +190,45 @@
 
 .small-note { font-size: 0.86rem; color: var(--js-muted); }
 
+/* --- Library list (playbooks index) ------------------------ */
+.library-list {
+  margin: 1rem 0 1.8rem;
+  border: 1px solid var(--js-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.library-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  border-bottom: 1px solid var(--js-border);
+  background: var(--js-panel);
+}
+.library-row:last-child { border-bottom: 0; }
+.library-info strong {
+  display: block;
+  font-family: "IBM Plex Serif", Georgia, serif;
+  font-size: 1rem;
+}
+.library-info span {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.84rem;
+  color: var(--js-muted);
+}
+.md-typeset .library-actions {
+  margin: 0;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 52rem) {
+  .library-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
 /* --- Newsletter signup panel (playbooks index) ------------- */
 .signup-panel {
   margin: 1.8rem 0;
