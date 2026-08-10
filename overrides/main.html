@@ -20,6 +20,22 @@
 
 {% block extrahead %}
   {{ super() }}
+  {% if page %}
+  {% set og_title = "Jordy Support: Free Plain-English AI Guides for Non-Techies" if page.is_homepage else ((page.meta.title or page.title) ~ " - Jordy Support") %}
+  {% set og_desc = page.meta.description or config.site_description %}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Jordy Support">
+  <meta property="og:title" content="{{ og_title }}">
+  <meta property="og:description" content="{{ og_desc }}">
+  {% if page.canonical_url %}<meta property="og:url" content="{{ page.canonical_url }}">{% endif %}
+  <meta property="og:image" content="https://jordysupport.com/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ og_title }}">
+  <meta name="twitter:description" content="{{ og_desc }}">
+  <meta name="twitter:image" content="https://jordysupport.com/assets/og-card.png">
+  {% endif %}
   {% if page and page.is_homepage %}
   <script type="application/ld+json">
   {

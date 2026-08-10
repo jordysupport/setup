@@ -1,0 +1,34 @@
+# Jordy Support
+
+> Free, plain-English guides to using AI agents safely: what to type, what to check, and how to stay in control. Written for people who are not technical. No paywall, no required signup, and every guide stays free.
+
+The site teaches five habits: say the job clearly, give the AI the right information, limit what it can touch, check the result, then automate. The goal is never maximum automation. It is help you can check.
+
+## Start here
+
+- [Start Here](https://jordysupport.com/getting-started/): The starting path for complete beginners.
+- [Choose Your Setup](https://jordysupport.com/getting-started/choose-a-setup/): Pick an AI setup that fits what you already pay for.
+- [Your First Agent](https://jordysupport.com/getting-started/first-agent/): A safe first project with an AI agent.
+
+## Core guides
+
+- [How Agents Work](https://jordysupport.com/fundamentals/): The basics of AI agents in plain English.
+- [Is It Safe to Share Files?](https://jordysupport.com/fundamentals/is-it-safe-to-let-ai-read-your-files/): What AI tools can see and how to limit it.
+- [Why AI Makes Things Up](https://jordysupport.com/fundamentals/why-ai-makes-things-up/): Hallucination explained, and the habits that catch it.
+- [Tokenomics](https://jordysupport.com/tokenomics/): What AI tokens are and why chats hit limits.
+- [Prompting That Works](https://jordysupport.com/prompting/): Practical prompting without jargon.
+- [Automation Basics](https://jordysupport.com/automation/): Planning workflows you can trust.
+
+## Playbooks (free downloads)
+
+- [The Library](https://jordysupport.com/playbooks/): Four installable playbooks that teach an AI a job once so you can run it any time. Research a topic, repurpose content, process a meeting, build a knowledge base. Each has a finished example.
+
+## Free software
+
+- [VALE](https://jordysupport.com/vale/): A free Windows voice assistant with local speech and four visual worlds.
+- [TUSK](https://jordysupport.com/tusk/): A free, open-source, local-first CRM for selling websites to local businesses. Also available hosted at tuskcrm.com.
+- [Downloads](https://jordysupport.com/downloads/): Every download in one place.
+
+## Newsletter
+
+- [Prompt Academy](https://jordysupport.com/newsletter/): One practical AI habit every two weeks. Every issue publishes free on the site.
