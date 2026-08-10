@@ -52,6 +52,6 @@
   </script>
   {% endif %}
   {% if config.extra.cf_analytics_token %}
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ config.extra.cf_analytics_token }}"}'></script>
+  <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ config.extra.cf_analytics_token }}"}'></script>
   {% endif %}
 {% endblock %}
