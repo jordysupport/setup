@@ -1,4 +1,5 @@
 ---
+title: "AI Research with Real Sources: Free Playbook"
 description: >-
   Get AI research with real sources you can click: a free playbook that interviews you, researches your question, and delivers a short, honest brief.
 software_schema:

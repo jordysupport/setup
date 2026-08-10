@@ -1,4 +1,5 @@
 ---
+title: "Repurpose Content with AI: Free Playbook"
 description: >-
   Turn one article, video, or post into drafts for newsletter, social, and video with AI — without invented facts. A free plain-English playbook.
 software_schema:

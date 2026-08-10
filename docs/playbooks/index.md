@@ -1,4 +1,5 @@
 ---
+title: "Free AI Playbooks: The Library"
 description: >-
   AI playbooks: teach your AI a job once — research, meeting notes, content — then run it any time with one phrase. Free downloads, plain English.
 ---

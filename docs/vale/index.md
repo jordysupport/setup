@@ -1,4 +1,5 @@
 ---
+title: "VALE: Free AI Voice Assistant for Windows"
 description: >-
   Download VALE for Windows: a free voice assistant with four visual worlds, local speech, and music-reactive fields. One prompt installs it via your AI.
 software_schema:

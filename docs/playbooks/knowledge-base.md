@@ -1,4 +1,5 @@
 ---
+title: "Build an AI Knowledge Base: Free Playbook"
 description: >-
   Build a personal knowledge base with AI: turn articles and decisions into short, sourced notes in your vault that future-you can actually use.
 software_schema:

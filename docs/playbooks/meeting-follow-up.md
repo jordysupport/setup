@@ -1,4 +1,5 @@
 ---
+title: "AI Meeting Notes to Follow-Up: Free Playbook"
 description: >-
   Turn messy meeting notes into decisions, to-dos with owners, and a ready-to-review follow-up message with AI. A free plain-English playbook.
 software_schema:

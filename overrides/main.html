@@ -1,5 +1,13 @@
 {% extends "base.html" %}
 
+{% block htmltitle %}
+  {% if page and page.is_homepage %}
+    <title>Jordy Support: Free Plain-English AI Guides for Non-Techies</title>
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock %}
+
 {% block content %}
   {{ super() }}
   {% if not page.is_homepage and not page.meta.hide_support_outro %}
