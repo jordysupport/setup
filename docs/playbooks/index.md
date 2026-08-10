@@ -58,6 +58,9 @@ That's the whole setup. The AI will ask where you keep your notes, save the play
 
 </div>
 
+!!! info "The library grows"
+    More playbooks are on the way, and every one of them lands here free, no signup. Each playbook page shows a finished example first, so you can see the payoff before you download anything.
+
 ## Why the interview beats a form
 
 Old way: copy a prompt, fill in `[the blanks]`, hope you guessed the format right. New way: the AI asks you one question at a time, in plain English, and fills in the playbook itself. You can't do it wrong.

@@ -5,6 +5,7 @@ software_schema:
   name: Knowledge Base Playbook
   operating_system: Windows, macOS, Linux
   category: UtilitiesApplication
+  version: "1.0"
   download_url: https://jordysupport.com/downloads/knowledge-base-skill.zip
 ---
 
@@ -24,9 +25,13 @@ Turn things worth keeping — articles, decisions, how-tos — into short notes 
   <div><strong>Time</strong><span>10–20 minutes</span></div>
 </div>
 
+Want to see the payoff before you start? [See a finished example](knowledge-base-example.md).
+
 ## Option 1 — Install it once (recommended)
 
 [Download the knowledge playbook](../downloads/knowledge-base-skill.zip){ .md-button .md-button--primary }
+
+<p class="small-note">Version 1 · July 2026 · Updates always land at this same link, and this page notes what changed.</p>
 
 Never give an AI a file you haven't looked inside. Here's everything in this one.
 
@@ -109,5 +114,7 @@ The note is short, sourced, and filed where you'll find it — and adding the ne
 !!! tip "If this helped"
     This playbook just gave your notes a system. If it helped, a small tip keeps every guide here free.
     [Tip on Ko-fi](https://ko-fi.com/support_jordy)
+
+**Pairs well with:** [Research a topic](research-brief.md): finished briefs are exactly the kind of source worth saving.
 
 [Choose another playbook](index.md){ .md-button }

@@ -5,6 +5,7 @@ software_schema:
   name: Meeting Follow-Up Playbook
   operating_system: Windows, macOS, Linux
   category: UtilitiesApplication
+  version: "1.0"
   download_url: https://jordysupport.com/downloads/meeting-follow-up-skill.zip
 ---
 
@@ -24,9 +25,13 @@ Turn messy notes or a transcript into decisions, to-dos with owners, and a follo
   <div><strong>Time</strong><span>10–15 minutes</span></div>
 </div>
 
+Want to see the payoff before you start? [See a finished example](meeting-follow-up-example.md).
+
 ## Option 1 — Install it once (recommended)
 
 [Download the meeting playbook](../downloads/meeting-follow-up-skill.zip){ .md-button .md-button--primary }
+
+<p class="small-note">Version 1 · July 2026 · Updates always land at this same link, and this page notes what changed.</p>
 
 Never give an AI a file you haven't looked inside. Here's everything in this one.
 
@@ -111,5 +116,7 @@ The follow-up could go out with one quick read — and you'd stand behind every 
 !!! tip "If this helped"
     This playbook just turned messy notes into a follow-up you can send. If it helped, a small tip keeps every guide here free.
     [Tip on Ko-fi](https://ko-fi.com/support_jordy)
+
+**Pairs well with:** [Build a knowledge base](knowledge-base.md), so decisions worth keeping outlive the meeting.
 
 [Choose another playbook](index.md){ .md-button }

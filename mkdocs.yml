@@ -50,6 +50,10 @@ theme:
 plugins:
   - search:
       lang: en
+  # Insurance against future renames: if a page slug ever has to change,
+  # map old -> new here in the same commit (see CONVENTIONS.md).
+  - redirects:
+      redirect_maps: {}
   - git-revision-date-localized:
       type: date
       enable_creation_date: false
@@ -125,8 +129,11 @@ nav:
       - Research a Topic: playbooks/research-brief.md
       - 'Example: Research Brief': playbooks/research-brief-example.md
       - Repurpose Content: playbooks/content-repurpose.md
+      - 'Example: Content Repurpose': playbooks/content-repurpose-example.md
       - Process a Meeting: playbooks/meeting-follow-up.md
+      - 'Example: Meeting Follow-Up': playbooks/meeting-follow-up-example.md
       - Build a Knowledge Base: playbooks/knowledge-base.md
+      - 'Example: Knowledge Base': playbooks/knowledge-base-example.md
   - Troubleshooting:
       - Fix It in Order: troubleshooting/index.md
       - Terminal Basics: troubleshooting/terminal-basics.md

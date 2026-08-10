@@ -5,6 +5,7 @@ software_schema:
   name: Research Brief Playbook
   operating_system: Windows, macOS, Linux
   category: UtilitiesApplication
+  version: "1.0"
   download_url: https://jordysupport.com/downloads/research-brief-skill.zip
 ---
 
@@ -29,6 +30,8 @@ Want to see the payoff before you start? [See a finished example brief](research
 ## Option 1 — Install it once (recommended)
 
 [Download the research playbook](../downloads/research-brief-skill.zip){ .md-button .md-button--primary }
+
+<p class="small-note">Version 1 · July 2026 · Updates always land at this same link, and this page notes what changed.</p>
 
 Never give an AI a file you haven't looked inside. Here's everything in this one.
 
@@ -116,5 +119,7 @@ Another person could read your brief and click their way to the evidence behind 
 !!! tip "If this helped"
     This playbook just saved you a research afternoon. If it helped, a small tip keeps every guide here free.
     [Tip on Ko-fi](https://ko-fi.com/support_jordy)
+
+**Pairs well with:** [Build a knowledge base](knowledge-base.md), so briefs worth keeping become notes you can find again.
 
 [Choose another playbook](index.md){ .md-button }

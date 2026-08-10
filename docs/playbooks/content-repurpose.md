@@ -5,6 +5,7 @@ software_schema:
   name: Content Repurpose Playbook
   operating_system: Windows, macOS, Linux
   category: UtilitiesApplication
+  version: "1.0"
   download_url: https://jordysupport.com/downloads/content-repurpose-skill.zip
 ---
 
@@ -24,9 +25,13 @@ Turn one good article, video, or post into ready-to-edit drafts for every other 
   <div><strong>Time</strong><span>10–20 minutes</span></div>
 </div>
 
+Want to see the payoff before you start? [See a finished example](content-repurpose-example.md).
+
 ## Option 1 — Install it once (recommended)
 
 [Download the repurpose playbook](../downloads/content-repurpose-skill.zip){ .md-button .md-button--primary }
+
+<p class="small-note">Version 1 · July 2026 · Updates always land at this same link, and this page notes what changed.</p>
 
 Never give an AI a file you haven't looked inside. Here's everything in this one.
 
@@ -110,5 +115,7 @@ You have drafts you'd be comfortable editing lightly and posting — and nothing
 !!! tip "If this helped"
     This playbook just turned one source into a week of drafts. If it helped, a small tip keeps every guide here free.
     [Tip on Ko-fi](https://ko-fi.com/support_jordy)
+
+**Pairs well with:** [Research a topic](research-brief.md): research once, then publish it everywhere.
 
 [Choose another playbook](index.md){ .md-button }
