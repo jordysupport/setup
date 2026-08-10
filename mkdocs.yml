@@ -125,15 +125,16 @@ nav:
       - Make It Reliable: automation/reliability.md
       - Ideas to Steal: automation/ideas.md
   - Playbooks:
-      - How Playbooks Work: playbooks/index.md
+      - The Library: playbooks/index.md
       - Research a Topic: playbooks/research-brief.md
-      - 'Example: Research Brief': playbooks/research-brief-example.md
       - Repurpose Content: playbooks/content-repurpose.md
-      - 'Example: Content Repurpose': playbooks/content-repurpose-example.md
       - Process a Meeting: playbooks/meeting-follow-up.md
-      - 'Example: Meeting Follow-Up': playbooks/meeting-follow-up-example.md
       - Build a Knowledge Base: playbooks/knowledge-base.md
-      - 'Example: Knowledge Base': playbooks/knowledge-base-example.md
+      - Examples:
+          - Research Brief: playbooks/research-brief-example.md
+          - Content Repurpose: playbooks/content-repurpose-example.md
+          - Meeting Follow-Up: playbooks/meeting-follow-up-example.md
+          - Knowledge Base: playbooks/knowledge-base-example.md
   - Troubleshooting:
       - Fix It in Order: troubleshooting/index.md
       - Terminal Basics: troubleshooting/terminal-basics.md

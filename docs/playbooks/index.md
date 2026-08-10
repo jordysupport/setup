@@ -21,41 +21,56 @@ A [playbook](../resources/glossary.md#playbook) is one useful job — research, 
   <div><strong>3 · Just ask</strong><span>From then on, say "start my research playbook." It interviews you — no forms, no re-downloads.</span></div>
 </div>
 
-After you download, open that playbook's page and copy its install message. The exact downloaded filename is already filled in, so your AI knows what to locate and extract.
-
-That's the whole setup. The AI will ask where you keep your notes, save the playbook there, and tell you the magic phrase to start it later.
+That's the whole setup. The AI asks where you keep your notes, saves the playbook there, and tells you the start phrase to use forever.
 
 !!! tip "No agent? No problem."
     Every playbook page also has a plain copy-paste prompt that works in any normal AI chat.
 
-## Pick a playbook
+## The Library
 
-<div class="grid cards" markdown>
+Every playbook, free, installed the same way. Each one links a finished example, so you can see the payoff before you download anything.
 
--   **Research a topic**
-
-    You answer a few questions. It comes back with a short brief and real sources.
-
-    [Open playbook →](research-brief.md){ .md-button .md-button--primary }
-
--   **Repurpose content**
-
-    One source in, drafts for newsletter, social, and video out.
-
-    [Open playbook →](content-repurpose.md){ .md-button .md-button--primary }
-
--   **Process a meeting**
-
-    Notes in, decisions, to-dos, and a draft follow-up out.
-
-    [Open playbook →](meeting-follow-up.md){ .md-button .md-button--primary }
-
--   **Build a knowledge base**
-
-    Turn something worth keeping into a clean note in your vault.
-
-    [Open playbook →](knowledge-base.md){ .md-button .md-button--primary }
-
+<div class="library-list">
+  <div class="library-row">
+    <div class="library-info">
+      <strong>Research a topic</strong>
+      <span>One question in, a short brief with real sources out. 15–30 minutes.</span>
+    </div>
+    <p class="library-actions">
+      <a class="md-button md-button--primary" href="research-brief/">Open</a>
+      <a class="md-button" href="research-brief-example/">Example</a>
+    </p>
+  </div>
+  <div class="library-row">
+    <div class="library-info">
+      <strong>Repurpose content</strong>
+      <span>One article, video, or post becomes drafts for every channel. 10–20 minutes.</span>
+    </div>
+    <p class="library-actions">
+      <a class="md-button md-button--primary" href="content-repurpose/">Open</a>
+      <a class="md-button" href="content-repurpose-example/">Example</a>
+    </p>
+  </div>
+  <div class="library-row">
+    <div class="library-info">
+      <strong>Process a meeting</strong>
+      <span>Messy notes become decisions, to-dos, and a sendable follow-up. 10–15 minutes.</span>
+    </div>
+    <p class="library-actions">
+      <a class="md-button md-button--primary" href="meeting-follow-up/">Open</a>
+      <a class="md-button" href="meeting-follow-up-example/">Example</a>
+    </p>
+  </div>
+  <div class="library-row">
+    <div class="library-info">
+      <strong>Build a knowledge base</strong>
+      <span>Things worth keeping become short, sourced notes in your vault. 10–20 minutes.</span>
+    </div>
+    <p class="library-actions">
+      <a class="md-button md-button--primary" href="knowledge-base/">Open</a>
+      <a class="md-button" href="knowledge-base-example/">Example</a>
+    </p>
+  </div>
 </div>
 
 <div class="signup-panel">
@@ -99,11 +114,9 @@ That's the whole setup. The AI will ask where you keep your notes, save the play
 })();
 </script>
 
-## Why the interview beats a form
-
-Old way: copy a prompt, fill in `[the blanks]`, hope you guessed the format right. New way: the AI asks you one question at a time, in plain English, and fills in the playbook itself. You can't do it wrong.
-
 ## Two rules that never change
 
 1. **You review before anything is used, sent, or published.**
-2. **The AI stays inside the folder you gave it.** Every playbook is built with those rules baked in.
+2. **The AI stays inside the folder you gave it.**
+
+Every playbook ships with both baked in. And none of them hand you a form to fill out: each one interviews you one question at a time, in plain English, so you can't do it wrong.
