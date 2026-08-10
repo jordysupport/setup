@@ -69,6 +69,20 @@ Every playbook uses one slug everywhere. For slug `<slug>`:
 - [ ] If Ko-fi Shop listings exist, re-upload the new ZIP to the matching
       listing (Ko-fi holds a copy; the site is canonical).
 
+## Newsletter convention
+
+The newsletter's brand name (currently "Prompt Academy") lives in page
+titles and headings only. URLs are name-agnostic and numbered:
+
+- Index: `docs/newsletter/index.md` → `/newsletter/`
+- Issues: `docs/newsletter/001.md` → `/newsletter/001/`, then `002`, ...
+
+Issue URLs are permanent like every other URL here. A newsletter rename
+touches titles and the nav label, never a slug. Every issue publishes
+free on the site the same day the email goes out; the email is pasted
+into a Kit broadcast and sent manually by Jordy. Each new issue gets a
+row in the index archive list in the same commit.
+
 ## Writing rules for public copy
 
 - No em-dashes in drafted copy intended for publication or example

@@ -135,6 +135,9 @@ nav:
           - Content Repurpose: playbooks/content-repurpose-example.md
           - Meeting Follow-Up: playbooks/meeting-follow-up-example.md
           - Knowledge Base: playbooks/knowledge-base-example.md
+  - Newsletter:
+      - Prompt Academy: newsletter/index.md
+      - 'Issue #001: Ask it twice': newsletter/001.md
   - Troubleshooting:
       - Fix It in Order: troubleshooting/index.md
       - Terminal Basics: troubleshooting/terminal-basics.md
