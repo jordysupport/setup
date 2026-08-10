@@ -206,7 +206,71 @@
   font-size: 0.9rem;
   line-height: 1.6;
 }
-.signup-panel .formkit-form { margin-top: 0.4rem; }
+/* Restyle the injected Kit form to the field-manual language.
+   Kit ships an embedded stylesheet plus inline styles, so these rules
+   carry !important and out-specify Kit's `[data-uid]` selectors.
+   Verified against the live rendered form 2026-08-10. */
+.signup-panel .formkit-form {
+  margin: 0.4rem 0 0 !important;
+  max-width: 34rem;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.signup-panel .formkit-form > div,
+.signup-panel .formkit-form [data-style] {
+  padding: 0 !important;
+}
+.signup-panel .formkit-form .formkit-fields {
+  margin: 0 !important;
+}
+.signup-panel form.formkit-form[data-uid] .formkit-input,
+.signup-panel form.formkit-form[data-uid] .formkit-input:focus {
+  background: var(--md-default-bg-color) !important;
+  border: 1px solid var(--js-border) !important;
+  border-radius: 3px !important;
+  color: var(--js-ink) !important;
+  font-family: var(--md-text-font-family, sans-serif) !important;
+  font-size: 0.8rem !important;
+  padding: 0.55rem 0.7rem !important;
+  box-shadow: none !important;
+}
+.signup-panel form.formkit-form[data-uid] .formkit-input::placeholder {
+  color: var(--js-muted) !important;
+}
+.signup-panel form.formkit-form[data-uid] .formkit-submit {
+  background-color: var(--js-green-dark) !important;
+  border: 1.5px solid var(--js-green-dark) !important;
+  border-radius: 3px !important;
+  color: #fff !important;
+  font-family: var(--md-text-font-family, sans-serif) !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  box-shadow: none !important;
+  transition: background-color 120ms ease !important;
+}
+.signup-panel form.formkit-form[data-uid] .formkit-submit:hover {
+  background-color: var(--js-green) !important;
+  border-color: var(--js-green) !important;
+}
+[data-md-color-scheme="slate"] .signup-panel form.formkit-form[data-uid] .formkit-submit {
+  color: #10160f !important;
+}
+.signup-panel form.formkit-form[data-uid] .formkit-submit > span {
+  padding: 0.55rem 1.1rem !important;
+}
+.signup-panel form.formkit-form[data-uid] .formkit-alert {
+  margin: 0.6rem 0 0 !important;
+  border: 1px solid var(--js-border) !important;
+  border-left: 4px solid var(--js-green) !important;
+  border-radius: 0 3px 3px 0 !important;
+  background: var(--md-default-bg-color) !important;
+  color: var(--js-ink) !important;
+}
+.signup-panel .formkit-powered-by-convertkit-container {
+  margin-top: 0.5rem !important;
+  opacity: 0.55;
+}
 
 /* --- Support outro (auto-appended on guide pages) ---------- */
 .support-outro {
