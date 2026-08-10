@@ -206,97 +206,51 @@
   font-size: 0.9rem;
   line-height: 1.6;
 }
-/* Restyle the injected Kit form to the field-manual language.
-   Kit ships an embedded stylesheet plus inline styles, so these rules
-   carry !important and out-specify Kit's `[data-uid]` selectors.
-   Verified against the live rendered form 2026-08-10. */
-.signup-panel .formkit-form {
-  margin: 0.4rem 0 0 !important;
+/* First-party signup form (posts to the list provider's endpoint;
+   no third-party script). */
+.signup-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   max-width: 34rem;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
+  margin-top: 0.8rem;
 }
-.signup-panel .formkit-form > div,
-.signup-panel .formkit-form [data-style] {
-  padding: 0 !important;
+.signup-input {
+  flex: 1 1 14rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--js-border);
+  border-radius: 3px;
+  background: var(--md-default-bg-color);
+  color: var(--js-ink);
+  font-family: inherit;
+  font-size: 0.8rem;
 }
-.signup-panel .formkit-form .formkit-fields {
-  margin: 0 !important;
+.signup-input:focus {
+  outline: 2px solid var(--js-green);
+  outline-offset: 1px;
 }
-.signup-panel form.formkit-form[data-uid] .formkit-input,
-.signup-panel form.formkit-form[data-uid] .formkit-input:focus {
-  background: var(--md-default-bg-color) !important;
-  border: 1px solid var(--js-border) !important;
-  border-radius: 3px !important;
-  color: var(--js-ink) !important;
-  font-family: var(--md-text-font-family, sans-serif) !important;
-  font-size: 0.8rem !important;
-  padding: 0.55rem 0.7rem !important;
-  box-shadow: none !important;
+.signup-input::placeholder { color: var(--js-muted); }
+.signup-button {
+  padding: 0.55rem 1.1rem;
+  border: 1.5px solid var(--js-green-dark);
+  border-radius: 3px;
+  background: var(--js-green-dark);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 120ms ease;
 }
-.signup-panel form.formkit-form[data-uid] .formkit-input::placeholder {
-  color: var(--js-muted) !important;
+.signup-button:hover {
+  background: var(--js-green);
+  border-color: var(--js-green);
 }
-.signup-panel form.formkit-form[data-uid] .formkit-submit {
-  background-color: var(--js-green-dark) !important;
-  border: 1.5px solid var(--js-green-dark) !important;
-  border-radius: 3px !important;
-  color: #fff !important;
-  font-family: var(--md-text-font-family, sans-serif) !important;
-  font-size: 0.8rem !important;
-  font-weight: 600 !important;
-  box-shadow: none !important;
-  transition: background-color 120ms ease !important;
-}
-.signup-panel form.formkit-form[data-uid] .formkit-submit:hover {
-  background-color: var(--js-green) !important;
-  border-color: var(--js-green) !important;
-}
-[data-md-color-scheme="slate"] .signup-panel form.formkit-form[data-uid] .formkit-submit {
-  color: #10160f !important;
-}
-.signup-panel form.formkit-form[data-uid] .formkit-submit > span {
-  padding: 0.55rem 1.1rem !important;
-}
-.signup-panel form.formkit-form[data-uid] .formkit-alert {
-  margin: 0.6rem 0 0 !important;
-  border: 1px solid var(--js-border) !important;
-  border-left: 4px solid var(--js-green) !important;
-  border-radius: 0 3px 3px 0 !important;
-  background: var(--md-default-bg-color) !important;
-  color: var(--js-ink) !important;
-}
-.signup-panel .formkit-powered-by-convertkit-container {
-  margin-top: 0.5rem !important;
-  opacity: 0.55;
-}
-/* Literal per-palette values as a second layer: some engines mistreat
-   var() inside !important declarations when competing with the embed's
-   inline styles. Keep these in sync with the palette variables above. */
-[data-md-color-scheme="default"] .signup-panel form.formkit-form[data-uid] .formkit-input {
-  background: #fbfaf6 !important;
-  border-color: #d9d7cc !important;
-  color: #23281f !important;
-}
-[data-md-color-scheme="default"] .signup-panel form.formkit-form[data-uid] .formkit-submit {
-  background-color: #22503b !important;
-  border-color: #22503b !important;
-  color: #ffffff !important;
-}
-[data-md-color-scheme="default"] .signup-panel form.formkit-form[data-uid] .formkit-submit:hover {
-  background-color: #2e6b4f !important;
-  border-color: #2e6b4f !important;
-}
-[data-md-color-scheme="slate"] .signup-panel form.formkit-form[data-uid] .formkit-input {
-  background: #1e2129 !important;
-  border-color: #3a4038 !important;
-  color: #e8eae4 !important;
-}
-[data-md-color-scheme="slate"] .signup-panel form.formkit-form[data-uid] .formkit-submit {
-  background-color: #86c2a4 !important;
-  border-color: #86c2a4 !important;
-  color: #10160f !important;
+.signup-button:disabled { opacity: 0.6; cursor: default; }
+[data-md-color-scheme="slate"] .signup-button { color: #10160f; }
+.signup-panel .signup-status {
+  margin: 0.6rem 0 0;
+  font-size: 0.82rem;
 }
 
 /* --- Support outro (auto-appended on guide pages) ---------- */

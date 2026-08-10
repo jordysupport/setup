@@ -61,8 +61,43 @@ That's the whole setup. The AI will ask where you keep your notes, save the play
 <div class="signup-panel">
   <span class="kicker">New playbooks, sent to you</span>
   <p>The library grows, and every playbook lands here free, no signup. Leave an email and new ones hit your inbox the day they ship, along with occasional practical tips and tools worth knowing about. Nothing sold, nothing shared, unsubscribe any time.</p>
-  <script async data-uid="4171b61515" src="https://jordysupport.kit.com/4171b61515/index.js"></script>
+  <form class="signup-form" action="https://app.kit.com/forms/9786057/subscriptions" method="post">
+    <input class="signup-input" type="email" name="email_address" placeholder="Email address" aria-label="Email address" autocomplete="email" required>
+    <button class="signup-button" type="submit">Subscribe</button>
+  </form>
+  <p class="signup-status" role="status" aria-live="polite" hidden></p>
 </div>
+
+<script>
+(function () {
+  var form = document.querySelector(".signup-form");
+  if (!form) return;
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var status = document.querySelector(".signup-status");
+    var button = form.querySelector(".signup-button");
+    var fail = "That didn't go through. Check the address and try again.";
+    button.disabled = true;
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" }
+    }).then(function (r) { return r.json(); }).then(function (d) {
+      if (d && d.status !== "failed") {
+        form.querySelector(".signup-input").value = "";
+        status.textContent = "Done. Check your email to confirm your subscription.";
+      } else {
+        status.textContent = fail;
+      }
+    }).catch(function () {
+      status.textContent = fail;
+    }).finally(function () {
+      status.hidden = false;
+      button.disabled = false;
+    });
+  });
+})();
+</script>
 
 ## Why the interview beats a form
 
